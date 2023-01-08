@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css.css">
+<title>Grzegorz Fiejtek</title>
+</head>
+<body>
+  <h1>Credit Card Details</h1>
+  <h2>Creators:</p>
+  <p>Grzegorz Fiejtek</p>
+  <p>Dominik Rajtar</p>
+
+  <div class="main">
+    <div class="container">
+       
+        <canvas id="myChart" style="width:900px"></canvas>
+
+ <script>
+    getData();
+async function getData() {
+  const response = await fetch('https://my.api.mockaroo.com/users.json?key=82bfee10');
+  const data = await response.json();
+  console.log(data);
+  length = data.length;
+  console.log(length);
+  labels = [];
+  values = [];
+  for (i = 0; i < length; i++) {
+    labels.push(data[i].credit_card);
+    values.push(data[i].average_income);
+  }
+  new Chart(document.getElementById("myChart"), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "Average income (k$)",
+          backgroundColor: "#9b60c5",
+          data: values
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Average income (K$)'
+      }
+    }
+  });
+}
+     
+   </script>
+  
+<script>
+    var menu = document.querySelector('.menu');
+    menu.addEventListener('click', function () {
+    menu.classList.toggle('open');});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
