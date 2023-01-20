@@ -1,63 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
+
 <head>
-<link rel="stylesheet" href="css.css">
-<title>Grzegorz Fiejtek</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <title>EDI Project</title>
+    
 </head>
 <body>
-  <h1>Credit Card Details</h1>
-  <h2>Creators:</p>
-  <p>Grzegorz Fiejtek</p>
-  <p>Dominik Rajtar</p>
-
-  <div class="main">
-    <div class="container">
-       
-        <canvas id="myChart" style="width:900px"></canvas>
-
- <script>
-    getData();
-async function getData() {
-  const response = await fetch('https://my.api.mockaroo.com/users.json?key=82bfee10');
-  const data = await response.json();
-  console.log(data);
-  length = data.length;
-  console.log(length);
-  labels = [];
-  values = [];
-  for (i = 0; i < length; i++) {
-    labels.push(data[i].credit_card);
-    values.push(data[i].average_income);
-  }
-  new Chart(document.getElementById("myChart"), {
-    type: 'bar',
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: "Average income (k$)",
-          backgroundColor: "#9b60c5",
-          data: values
-        }
-      ]
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Average income (K$)'
-      }
-    }
-  });
-}
-     
-   </script>
-  
-<script>
-    var menu = document.querySelector('.menu');
-    menu.addEventListener('click', function () {
-    menu.classList.toggle('open');});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <header>
+        <h1>Average Income and money spent for diffrent credit cards</h1>
+    </header>
+    <footer>
+        <h2>Grzegorz Fiejtek</h2>
+        <h2>Dominik Rajtar</h2>
+    </footer>
+    <main>
+        <canvas id="Chart1"></canvas>
+        <canvas id="Chart2"></canvas>
+        <div id="table-container"></div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

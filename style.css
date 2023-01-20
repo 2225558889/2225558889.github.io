@@ -1,0 +1,184 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ^ CSS RESET FOR VARIOUS BROWSERS ^ */
+
+body{
+  background-color: none;
+  background-image: linear-gradient(45deg, #c710d4 0%, #0de1ec 100%);
+  font-family: 'Roboto', sans-serif;
+}
+h1{
+  font-size: 3em;
+  color: rgb(212, 109, 13);
+  text-transform: uppercase;
+  font-weight: 200;
+  text-align: center; /*wyśrodkowanie tekstu.*/
+  padding: 40px 0px; /*Wypełnienie tworzy dodatkową przestrzeń w elemencie umiejscowioną między jego zawartością a krawędzią obramowania*/
+}
+table{
+  width:100%;
+  table-layout: auto;
+}
+.tbl-header{
+  background-color: rgba(0, 255, 30, 0.3);
+ }
+.tbl-content{
+  height:300px;
+  margin-top: 0px;
+  border: 1px solid rgba(58, 205, 29, 0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: rgb(49, 205, 38);
+  background-color: #fff;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 15px;
+  color: rgb(28, 224, 64);
+  border-bottom: 1px rgba(90, 90, 90, 0.334) solid;
+}
+section{
+  margin: 50px;
+}
+
+#table-container{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 550px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+  border-bottom: 1px rgba(0, 0, 0, 0.334) solid;   
+  border-left: 1px rgba(0, 0, 0, 0.334) solid;     
+}
+#Chart1{
+  width: 90% !important;
+  height: 90% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 50px !important; 
+}
+#Chart2{
+  width: 90% !important;
+  height: 90% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 50px !important; 
+}
+
+::-webkit-scrollbar-track
+{
+	background-color: none;
+}
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: none;
+}
+  ::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	background-color: rgba(92, 92, 92, 0.35);
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #b61ce0;
+  background-image: linear-gradient(45deg, #de7dff 0%, #18d1de 55%);  
+  height: 40px;
+  font-size: 40px;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: white;
+  padding: 20px ;
+  -webkit-box-shadow: -12px -2px 35px -7px rgba(66, 68, 90, 1);
+  -moz-box-shadow: -12px -2px 35px -7px rgba(66, 68, 90, 1);
+  box-shadow: -12px -2px 35px -7px rgba(66, 68, 90, 1);
+}
+
+h2:hover {
+  color: rgb(24, 24, 24);
+  text-shadow: 0 0 5px #152cff,
+              0 0 25px #2815ff,
+              0 0 50px #2115ff,
+              0 0 100px #3815ff;
+  transition: 0.5s;
+}
+h2 {
+  display: inline-block;
+  position: relative;
+  color: rgb(210, 107, 28);
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: rgb(44, 44, 44);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+h2:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
